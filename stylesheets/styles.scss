@@ -143,6 +143,7 @@ body{
   display: inline-block;
   width: 74%;
   float: left;
+  padding-bottom: 30px;
   ul{
     list-style-type: none;
     display: inline-block;
@@ -156,7 +157,6 @@ body{
 
 .mainContentMenu{
   border-bottom: 1px solid $borderColor;
-  padding-bottom: 10px;
   a{
     text-decoration: none;
     color: $bodyColor;
@@ -243,6 +243,11 @@ body{
 
 .repoTab{
   display:none;
+  padding-top: 15px;
+}
+
+.repoMenu{
+  border-bottom: 1px solid $borderColor;
 }
 
 .activityList{
@@ -296,6 +301,31 @@ body{
 .pushEvent img{
   width: 16px;
   border-radius: 2px;
+}
+
+.footer {
+  display: inline-block;
+  width: 100%;
+  padding: 25px 0px 50px 0px;
+  border-top:1px solid $borderColor;
+  text-align: center;
+    ul{
+    list-style-type: none;
+    display: inline-block;
+  }
+    li{
+    display: inline-block;
+    font-size: .85em;
+    padding-right: 10px;
+  }
+}
+
+.left{
+  float:left;
+}
+
+.right{
+  float:right;
 }
 
 .activeElement{

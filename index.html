@@ -20,7 +20,7 @@
         <div class="pushEvent">
           <p><%= createDate %> of hours/days ago</p>
           <p><a href="<%= actorURL %>"><%= actorLogin %></a> pushed to <a href="branchURL">BRANCHNAME</a> at <a href="<% repoURL %>"><%= repoName %></a></p>
-          <p><a href="actorURL"><img src = "<%= avatarURL %>"></a> <img src = "<%= avatarURL %>"> <a href="<%= commitsURL %>"><%= head.slice(0,7) %></a> <%= commitsURL %></p>
+          <p><a href="actorURL"><img src = "<%= avatarURL %>"></a> <img src = "<%= avatarURL %>"> <a href="<%= commitsURL %>"><%= head.slice(0,7) %></a> <%= commitsMessage %></p>
         </div>
       </li>
       <% }else{ %>
@@ -60,19 +60,21 @@
             <li><a href ="#"><span class="octicon octicon-repo"></span> Repositories<a/></li>
             <li><a href ="#"><span class="octicon octicon-rss"></span> Public Activity</a></li>
           </ul>
-          <a class="btn btn-default" href="#" role="button"><span class="octicon octicon-pencil"></span> Edit profile</a><br/>
+          <a class="btn btn-default" href="#" role="button"><span class="octicon octicon-pencil"></span> Edit profile</a>
         </div>
         <div class = "repoTab activeElement">
-          <span><input id="repoSearch" type="text" name="search" value="" placeholder="Find a repository..."></span><input class="btn btn-default" id="searchButton" type="button" value="Search">
-          <ul class="repoSearchTabs">
-            <li><a href="#">All</a></li>
-            <li><a href="#">Public</a></li>
-            <li><a href="#">Private</a></li>
-            <li><a href="#">Sources</a></li>
-            <li><a href="#">Forks</a></li>
-            <li><a href="#">Mirrors</a></li>
-            <li><button type="button" class="btn btn-success"><span class="octicon octicon-repo"> New</button></li>
-          </ul>
+            <div class = "repoMenu">
+            <span><input id="repoSearch" type="text" name="search" value="" placeholder="Find a repository..."></span><input class="btn btn-default" id="searchButton" type="button" value="Search">
+            <ul class="repoSearchTabs">
+              <li><a href="#">All</a></li>
+              <li><a href="#">Public</a></li>
+              <li><a href="#">Private</a></li>
+              <li><a href="#">Sources</a></li>
+              <li><a href="#">Forks</a></li>
+              <li><a href="#">Mirrors</a></li>
+              <li><button type="button" class="btn btn-success"><span class="octicon octicon-repo"> New</button></li>
+            </ul>
+          </div>
           <ul class="repoList">
           <!--Repositories go here -->
           </ul>
@@ -83,6 +85,24 @@
             <!--Recent activity goes here -->
           </ul>
         </div>
+      </div>
+      <div class ="footer">
+        <ul class="left">
+          <li>2015 GitHub, Inc.</li>
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Security</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <span class="mega-octicon octicon-mark-github"></span>
+        <ul class="right">
+          <li><a href="#">Status</a></li>
+          <li><a href="#">API</a></li>
+          <li><a href="#">Training</a></li>
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
       </div>
     </div>
   </body>

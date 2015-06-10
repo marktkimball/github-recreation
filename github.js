@@ -2002,7 +2002,8 @@ var mappedActivityData = _.map(activityData, function(el) {
     repoName: el.repo.name,
     createDate: el.created_at,
     avatarURL: el.actor.avatar_url,
-    commitsURL: el.payload.commits,
+    commitsURL: el.type==="CreateEvent"? "http://www.github.com/":el.payload.commits[0].url,
+    commitsMessage: el.type==="CreateEvent"? "None":el.payload.commits[0].message,
     head: el.payload.head
   }
 });
