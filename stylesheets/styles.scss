@@ -1,0 +1,303 @@
+$borderColor : #E5E5E5;
+$bodyColor: #333333;
+
+body{
+  color: $bodyColor;
+}
+
+.navBar{
+  background-color: #F5F5F5;
+  width: 100%;
+  border: 1px solid $borderColor;
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+}
+
+.navBarWrapper{
+  text-align: center;
+  padding: 5px 0px 5px 0px;
+  width: 1000px;
+  margin: auto;
+  display: block;
+  overflow:auto;
+}
+
+.navBarWrapper a{
+  text-decoration: none;
+  color: black;
+}
+
+.navBarWrapper ul{
+  list-style-type: none;
+  display: inline-block;
+  margin: 5px 0px 5px 0px;
+}
+
+.navBarWrapper li{
+  display: inline-block;
+  padding: 0px 5px 0px 5px;
+}
+
+.navBarLeft{
+  float:left;
+  display:block;
+}
+
+#searchBoxTop{
+  width: 354px;
+  border-radius: 3px;
+  border-style: none;
+  border: 1px solid #CCC;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.075);
+  padding: 3px 5px 3px 5px;
+}
+
+.topMenuUser{
+  float: right;
+  display:block;
+}
+
+.topMenuUser img{
+  width: 20px;
+}
+
+.octicon-mark-github{
+  margin: 5px 10px 5px 0px;
+}
+
+.container{
+  width: 1000px;
+  margin: auto;
+  margin-top: 15px;
+  padding:0;
+}
+
+.profile{
+  width: 24%;
+  padding: 0px 10px 0px 10px;
+  display:inline-block;
+  float: left;
+}
+
+.profile img{
+  max-width: 100%;
+  border-radius: 5px;
+}
+
+.profile h2{
+  margin: 5px 0px 5px 0px;
+}
+
+.profile h4{
+  margin: 0px 0px 15px 0px;
+  font-weight: normal;
+  color: #666666;
+}
+
+.locationInfo{
+  border: 1px solid $borderColor;
+  border-left: 0;
+  border-right: 0;
+  padding: 15px 0px 15px 0px;
+}
+
+.locationInfo .octicon{
+  color: $borderColor;
+}
+
+.userStats{
+  text-align: center;
+  margin-top: 10px;
+  padding-bottom: 10px;
+  border: 1px solid $borderColor;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+}
+
+.userStats a{
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  color: #666666;
+  font-size: 0.75em;
+  margin: 0px 10px 0px 10px;
+  margin:
+  &:hover{
+    color: #4078C0;
+  }
+}
+
+.stat{
+  font-size: 2.25em;
+  font-weight: bolder;
+  color: #4078C0;
+}
+
+.avatar img{
+  width: 42px;
+}
+
+.mainContent{
+  display: inline-block;
+  width: 74%;
+  float: left;
+  ul{
+    list-style-type: none;
+    display: inline-block;
+    padding-left: 0;
+  }
+  li{
+    display: inline-block;
+    padding: 8px 12px 8px 12px;
+  }
+}
+
+.mainContentMenu{
+  border-bottom: 1px solid $borderColor;
+  padding-bottom: 10px;
+  a{
+    text-decoration: none;
+    color: $bodyColor;
+    &:hover{
+      text-decoration: none;
+      color: $bodyColor;
+    }
+  }
+}
+
+.btn-default{
+  font-weight: bold;
+  background-color: #F0F0F0;
+  float: right;
+  padding: 2px 10px 2px 10px;
+}
+
+#repoSearch{
+  width: 242px;
+  border-radius: 3px;
+  border-style: none;
+  border: 1px solid #CCC;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.075);
+  padding: 7px 8px 7px 8px;
+}
+
+#searchButton{
+  float:none;
+  padding: 6px 12px 6px 12px;
+  margin-left: 5px;
+}
+
+.repoSearchTabs {
+  margin-left: 25px;
+  li{
+  padding: 0px 5px 0px 5px;
+  }
+  a{
+    color: #4078C0;
+    &:hover{
+      text-decoration: underline;
+      color: #4078C0;
+    }
+  }
+}
+
+.btn-success{
+  color:white;
+  background-color: #60b044;
+  background-image: linear-gradient(#8add6d, #60b044);
+  border-color: #5ca941;
+  padding: 6px 12px 6px 12px;
+  .octicon{
+    font: normal normal normal 13px/1 octicons;
+    font-weight: bold;
+  }
+}
+
+.repoList{
+  width:100%;
+  li{
+    width: 100%;
+    border-bottom: 1px solid $borderColor;
+  }
+}
+
+.repoStats{
+  float:right;
+  font-size: 0.75em;
+  a{
+    color: $bodyColor;
+    max-width: 400px;
+    margin-left: 5px;
+    &:hover{
+      color: #4078C0;
+      text-decoration: none;
+    }
+  }
+}
+
+.activityTab{
+  display:none;
+}
+
+.repoTab{
+  display:none;
+}
+
+.activityList{
+  width: 100%;
+}
+
+.activityList li{
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid $borderColor;
+  width: 100%;
+}
+
+.activityList .octicon{
+  margin-right: 25px;
+  color: #BBB;
+}
+
+.activityList .octicon-git-branch{
+  margin-right: 33px;
+}
+
+.pushEvent{
+  display: inline-block;
+  font-weight: bold;
+}
+
+.activityList .octicon-rss{
+  position: relative;
+  float:right;
+  background-color:#f37538;
+  color: white;
+  border-radius: 3px;
+  padding: 2px 4px 2px 4px;
+  margin-right: 0px;
+  top: 25px;
+}
+
+.mega-octicon{
+  vertical-align: top;
+  color: #BBB;
+  font-weight: normal;
+  margin-right: 9px;
+}
+
+.pushEvent a img{
+  width: 30px;
+  border-radius: 3px;
+}
+
+.pushEvent img{
+  width: 16px;
+  border-radius: 2px;
+}
+
+.activeElement{
+  display:block;
+}

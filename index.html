@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>marktkimball (Mark Kimball)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="stylesheets/octicons.css">
+    <link rel="stylesheet" href="stylesheets/main.css">
+    <script type="text/template" id="activityTemplates">
+      <% if(type === "CreateEvent") { %>
+      <!--Create Repo template-->
+      <li>
+        <span class="octicon octicon-repo"></span><a href="<%= actorURL %>"><%= actorLogin %></a> created repository <a href="<%= repoURL %>"><%= repoName %></a> <%= createDate %> of hours/days ago
+      </li>
+      <% }else if(type === "PushEvent"){ %>
+      <!--Push template-->
+      <li>
+        <div class="mega-octicon octicon-git-commit pushEvent"></div>
+        <div class="pushEvent">
+          <p><%= createDate %> of hours/days ago</p>
+          <p><a href="<%= actorURL %>"><%= actorLogin %></a> pushed to <a href="branchURL">BRANCHNAME</a> at <a href="<% repoURL %>"><%= repoName %></a></p>
+          <p><a href="actorURL"><img src = "<%= avatarURL %>"></a> <img src = "<%= avatarURL %>"> <a href="<%= commitsURL %>"><%= head.slice(0,7) %></a> <%= commitsURL %></p>
+        </div>
+      </li>
+      <% }else{ %>
+      <!--Create branch template-->
+      <li>
+        <span class="octicon octicon-git-branch"></span><a href="<%= actorURL %>"><%= actorLogin %></a> created branch <a href="branchURL">BRANCH NAME</a> at <a href="<% repoURL %>"><%= repoName %></a> <%= createDate %> of hours/days ago
+      </li>
+      <% } %>
+   </script>
+  </head>
+  <body>
+    <div class = "navBar">
+      <div class = "navBarWrapper">
+        <div class ="navBarLeft">
+          <a href="https://www.github.com" class="mega-octicon octicon-mark-github"></a>
+          <span><input id="searchBoxTop" type="text" name="search" value="" placeholder="Search GitHub"></span>
+            <ul>
+              <li><a href="https://www.github.com/explore/"> Explore</a></li>
+              <li><a href="https://gist.github.com">Gist</a></li>
+              <li><a href="https://www.github.com/blog/">Blog</a></li>
+              <li><a href="https://help.github.com">Help</a></li>
+            </ul>
+        </div>
+          <ul class = "topMenuUser">
+            <!--Right side menu data goes here-->
+          </ul>
+      </div>
+    </div>
+    <div class="container">
+      <div class="profile">
+        <!--Profile data goes here-->
+      </div>
+      <div class = "mainContent">
+        <div class = "mainContentMenu">
+          <ul class ="topOptions">
+            <li><a href ="#"><span class="octicon octicon-diff-added"></span> Contributions</a></li>
+            <li><a href ="#"><span class="octicon octicon-repo"></span> Repositories<a/></li>
+            <li><a href ="#"><span class="octicon octicon-rss"></span> Public Activity</a></li>
+          </ul>
+          <a class="btn btn-default" href="#" role="button"><span class="octicon octicon-pencil"></span> Edit profile</a><br/>
+        </div>
+        <div class = "repoTab activeElement">
+          <span><input id="repoSearch" type="text" name="search" value="" placeholder="Find a repository..."></span><input class="btn btn-default" id="searchButton" type="button" value="Search">
+          <ul class="repoSearchTabs">
+            <li><a href="#">All</a></li>
+            <li><a href="#">Public</a></li>
+            <li><a href="#">Private</a></li>
+            <li><a href="#">Sources</a></li>
+            <li><a href="#">Forks</a></li>
+            <li><a href="#">Mirrors</a></li>
+            <li><button type="button" class="btn btn-success"><span class="octicon octicon-repo"> New</button></li>
+          </ul>
+          <ul class="repoList">
+          <!--Repositories go here -->
+          </ul>
+        </div>
+        <div class = "activityTab">
+          <ul class="activityList">
+            <span class="octicon octicon-rss"></span>
+            <!--Recent activity goes here -->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+  <script type="text/javascript" src="bower_components/underscore/underscore.js"></script>
+  <script type="text/javascript" src="templates.js"></script>
+  <script type="text/javascript" src="github.js"></script>
+  <script type="text/javascript" src="main.js"></script>
+</html>
