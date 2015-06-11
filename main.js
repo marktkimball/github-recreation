@@ -20,7 +20,7 @@ var page = {
   },
 
   initEvents: function(arguments){
-    $('.mainContentMenu').on('click', 'a', page.toggleViews);
+    $('.topOptions').on('click', 'a', page.toggleViews);
 
   },
 
@@ -41,8 +41,15 @@ var page = {
     })
     $target.append(tmplString);
   },
+
   toggleViews: function(event){
-    $('.repoTab').toggleClass('activeElement');
-    $('.activityTab').toggleClass('activeElement');
+    event.preventDefault();
+    if($(this).hasClass('repositories') === true){
+      $('.repoTab').addClass('activeElement');
+      $('.activityTab').removeClass('activeElement');
+    }else if($(this).hasClass('publicActivity') === true){
+      $('.repoTab').removeClass('activeElement');
+      $('.activityTab').addClass('activeElement');
+    }
   }
 };

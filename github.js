@@ -2004,7 +2004,8 @@ var mappedActivityData = _.map(activityData, function(el) {
     avatarURL: el.actor.avatar_url,
     commitsURL: el.type==="CreateEvent"? "http://www.github.com/":el.payload.commits[0].url,
     commitsMessage: el.type==="CreateEvent"? "None":el.payload.commits[0].message,
-    head: el.payload.head
+    head: el.payload.head,
+    payloadRef: el.payload.ref
   }
 });
 

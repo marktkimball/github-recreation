@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="stylesheets/octicons.css">
     <link rel="stylesheet" href="stylesheets/main.css">
+
     <script type="text/template" id="activityTemplates">
-      <% if(type === "CreateEvent") { %>
+      <% if(type === "CreateEvent" && payloadRef === null) { %>
       <!--Create Repo template-->
       <li>
         <span class="octicon octicon-repo"></span><a href="<%= actorURL %>"><%= actorLogin %></a> created repository <a href="<%= repoURL %>"><%= repoName %></a> <%= createDate %> of hours/days ago
@@ -30,7 +31,9 @@
       </li>
       <% } %>
    </script>
+
   </head>
+
   <body>
     <div class = "navBar">
       <div class = "navBarWrapper">
@@ -49,16 +52,18 @@
           </ul>
       </div>
     </div>
+
     <div class="container">
       <div class="profile">
         <!--Profile data goes here-->
       </div>
+
       <div class = "mainContent">
         <div class = "mainContentMenu">
           <ul class ="topOptions">
-            <li><a href ="#"><span class="octicon octicon-diff-added"></span> Contributions</a></li>
-            <li><a href ="#"><span class="octicon octicon-repo"></span> Repositories<a/></li>
-            <li><a href ="#"><span class="octicon octicon-rss"></span> Public Activity</a></li>
+            <li><a href ="#" class="contributions"><span class="octicon octicon-diff-added"></span> Contributions</a></li>
+            <li><a href ="#" class="repositories"><span class="octicon octicon-repo"></span> Repositories<a/></li>
+            <li><a href ="#" class="publicActivity"><span class="octicon octicon-rss"></span> Public Activity</a></li>
           </ul>
           <a class="btn btn-default" href="#" role="button"><span class="octicon octicon-pencil"></span> Edit profile</a>
         </div>
@@ -86,6 +91,7 @@
           </ul>
         </div>
       </div>
+
       <div class ="footer">
         <ul class="left">
           <li>2015 GitHub, Inc.</li>
@@ -104,8 +110,10 @@
           <li><a href="#">About</a></li>
         </ul>
       </div>
+
     </div>
   </body>
+
   <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
   <script type="text/javascript" src="bower_components/underscore/underscore.js"></script>
   <script type="text/javascript" src="templates.js"></script>
