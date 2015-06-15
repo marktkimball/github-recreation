@@ -24,11 +24,11 @@ var userData = [
   "email": "",
   "hireable": false,
   "bio": null,
-  "public_repos": 11,
+  "public_repos": 13,
   "public_gists": 0,
   "followers": 0,
-  "following": 0,
-  "created_at": "2015-05-17T01:00:54Z",
+  "following": 2,
+  "created_at": moment("2015-05-17T01:00:54Z").format('MMMM D, YYYY'),
   "updated_at": "2015-05-19T17:43:06Z"
 }];
 
@@ -2000,18 +2000,27 @@ var mappedActivityData = _.map(activityData, function(el) {
     actorLogin: el.actor.login,
     repoURL: el.repo.url,
     repoName: el.repo.name,
-    createDate: el.created_at,
+    createDate: moment().to(el.created_at),
     avatarURL: el.actor.avatar_url,
     commitsURL: el.type==="CreateEvent"? "http://www.github.com/":el.payload.commits[0].url,
     commitsMessage: el.type==="CreateEvent"? "None":el.payload.commits[0].message,
     head: el.payload.head,
-    payloadRef: el.payload.ref
+    payloadRef: el.payload.ref,
+    branch_name: el.type==="PushEvent"? el.payload.ref.slice(11): el.payload.master_branch,
+    branchURL: el.type==="PushEvent"? el.payload.commits[0].url: el.repo.url
   }
 });
 
 var mappedRepoData = _.map(repoData, function(el){
   return{
-    branchURL: el.trees_url,
-    branchName: el.default_branch
+    language: el.language,
+    stargazers_count: el.stargazers_count,
+    forks_count: el.forks_count,
+    html_url: el.html_url,
+    name: el.name,
+    description: el.description,
+    updated_at: moment().to(el.updated_at),
+    branchURL: el.branches_url,
+    branch_name: el.default_branch
   }
 });

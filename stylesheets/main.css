@@ -217,7 +217,9 @@ body {
   margin-right: 33px; }
 
 .pushEvent {
-  display: inline-block;
+  display: inline-block; }
+
+.pushBoldLine {
   font-weight: bold; }
 
 .activityList .octicon-rss {
